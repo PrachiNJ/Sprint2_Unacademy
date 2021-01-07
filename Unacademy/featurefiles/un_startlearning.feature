@@ -1,4 +1,4 @@
-#Author: 
+#Author:
 
 @tag
 Feature: Title of your feature
