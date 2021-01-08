@@ -3,22 +3,27 @@ package stepDefinitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pages.Un_Startlearning;
+
+
 
 public class Un_StartlearningSteps
 {
+	Un_Startlearning u=new Un_Startlearning();
+	
 	@Given("^user opens unacademy url$")
-    public void user_opens_unacademy_url() throws Throwable {
-        
+    public void user_opens_unacademy_url() {
+        u.openurl();
     }
 
     @Given("^user is on exam module page$")
     public void user_is_on_exam_module_page() throws Throwable {
-       
+       u.exam_module();
     }
 
     @When("^select start learning$")
     public void select_start_learning() throws Throwable {
-        
+        u.validate_button();
     }
 
     @When("^user selects an exam$")
@@ -33,7 +38,7 @@ public class Un_StartlearningSteps
 
     @Then("^display exam module page$")
     public void display_exam_module_page() throws Throwable {
-        
+        u.exam_module();
     }
 
     @Then("^display courses offered$")

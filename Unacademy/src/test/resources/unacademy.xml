@@ -1,8 +1,8 @@
 <suite name="unacademySuite">
 	<test name="testUnacademy">
 		<classes>
-			<class name=""/>
-			<class name=""/>					
+			<class name="base.Unacdemysub_base"/>
+			<class name="testrunner.Un_testrunner"/>					
 		</classes>
 	</test>	
 </suite>

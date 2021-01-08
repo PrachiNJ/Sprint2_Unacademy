@@ -42,7 +42,7 @@ public class Unacdemysub_base {
 		 ext.attachReporter(htmlreport);
 		 ext.setSystemInfo("Host Name", "Mysystem");
 		 ext.setSystemInfo("Environment", "Test Env");
-		 ext.setSystemInfo("User Name", "Prachi Jain");
+		 ext.setSystemInfo("User Name", "Varoon");
 		   
 		 htmlreport.config().setDocumentTitle("Unacademy");
 		 htmlreport.config().setReportName("Unacademy Functional Testing");
