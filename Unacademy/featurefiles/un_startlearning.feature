@@ -1,8 +1,7 @@
 #Author:
 
 @tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: Start Learning
 
   @tag1
  Scenario: Verify Start Learning Button

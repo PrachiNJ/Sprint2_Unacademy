@@ -28,7 +28,7 @@ public class Un_StartlearningSteps
 
     @When("^user selects an exam$")
     public void user_selects_an_exam() throws Throwable {
-        
+    	u.select_exammodule();
     }
 
     @When("^user selects a course$")
