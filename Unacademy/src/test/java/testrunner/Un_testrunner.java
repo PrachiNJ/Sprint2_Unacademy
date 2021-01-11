@@ -10,7 +10,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
 		features = {"featurefiles/un_startlearning.feature"} /// which feature files to run
 		,glue={"stepDefinitions"}				//package names having the scripts for the feature file
-		,tags= "@tag1"			// the tags to run.... which are in feature file		
+		,tags= "@tag1,@tag2,@tag3"			// the tags to run.... which are in feature file		
 		)
 
 public class Un_testrunner extends AbstractTestNGCucumberTests {

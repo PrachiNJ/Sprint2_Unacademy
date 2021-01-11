@@ -33,7 +33,7 @@ public class Un_StartlearningSteps
 
     @When("^user selects a course$")
     public void user_selects_a_course() throws Throwable {
-        
+        u.courses_offered();
     }
 
     @Then("^display exam module page$")
@@ -43,11 +43,11 @@ public class Un_StartlearningSteps
 
     @Then("^display courses offered$")
     public void display_courses_offered() throws Throwable {
-        
+        u.select_exammodule();
     }
 
     @Then("^displays subscription page$")
     public void displays_subscription_page() throws Throwable {
-        
+        u.display_subscriptionpage();
     }
 }

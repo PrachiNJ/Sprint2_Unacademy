@@ -2,6 +2,7 @@ package pages;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -14,21 +15,15 @@ import base.Unacdemysub_base;
 public class Un_Startlearning extends Unacdemysub_base
 {
         @FindBy(xpath="//button[text()='Start learning']") WebElement startlearning;
-        @FindBy(xpath="(//p[text()='Defence Exams'])[1]") WebElement exammodule;
-        @FindBy(xpath="//p[text()='2.9k courses']") WebElement course;
+       // @FindBy(xpath="/html/body/div/div[1]/div/div[1]/ul/li[4]/a/h4") WebElement exammodule;
+       // @FindBy(xpath="//p[text()='2.9k courses']") WebElement course;
         
-       /* public Un_Startlearning()
-        {
-        	PageFactory.initElements(driver,this);
-    		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        }*/
-        
+      
         public void openurl()
     	{
         	PageFactory.initElements(driver,this);
     		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        	driver.get(prop.getProperty("url"));
-    		
+        	driver.get(prop.getProperty("url"));	
     	}
     	public void validate_button() throws Exception
     	{
@@ -57,8 +52,7 @@ public class Un_Startlearning extends Unacdemysub_base
     		{
     			log=ext.createTest("Exam_Modules");
     			log.log(Status.PASS, "Exam Module Page is Displayed");
-    			takescreenshot("Exam_Modules.png");
-    			
+    			takescreenshot("Exam_Modules.png");	
     		}
     		else
     		{
@@ -69,24 +63,31 @@ public class Un_Startlearning extends Unacdemysub_base
     	}
     	public void select_exammodule() throws Exception
     	{
-    	
-    		if(exammodule.isDisplayed())
+    		 WebElement e=driver.findElement(By.xpath("//ul/li[4]/a"));
+     		e.click();
+     		Thread.sleep(2000);
+    	}
+    	public void courses_offered() throws Exception
+    	{
+    		WebElement c=driver.findElement(By.xpath("(//div/div/p)[15]"));
+    		c.click();
+    		Thread.sleep(5000);
+    	}
+    	public void display_subscriptionpage() throws Exception
+    	{
+    		String title1=driver.getTitle();
+    		if(title1.contains("CDS/AFCAT/CAPF | Unacademy"))
     		{
-    			log=ext.createTest("StartLearning_Button");
-    			log.log(Status.PASS, "Button is Displayed");
-    			takescreenshot("StartLearning.png");
-    			new Actions(driver).moveToElement(exammodule).perform();
-    	
-    			exammodule.click();
-    			
+    			log=ext.createTest("Subscription_Page");
+    			log.log(Status.PASS, "Subscription Page is Displayed");
+    			takescreenshot("Subscription_Page.png");	
     		}
     		else
     		{
-    			log=ext.createTest("StartLearning_Button");
-    			log.log(Status.FAIL, "Button is not Displayed");
-    			takescreenshot("StartLearning.png");
+    			log=ext.createTest("Subscription_Page");
+    			log.log(Status.PASS, "Subscription Page is not Displayed");
+    			takescreenshot("Subscription_Page");
     		}
-    		
     	}
-        
+    	
 }
